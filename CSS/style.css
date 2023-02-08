@@ -9,6 +9,7 @@ main {
     border: 1px solid black;
     margin: 10px auto;
     display: flex;
+    align-items: center;
 }
 
 .sectionOne{
@@ -27,4 +28,12 @@ button{
 
 button:hover{
     cursor: pointer;
+}
+
+.sectionTwo {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 250px;
+    height: 400px;
 }
