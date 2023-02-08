@@ -20,9 +20,7 @@ console.log(numeros);
 // funcion principal
 function destapar(id){
     tarjetasDestapadas++;
-    console.log("se entró al metodo destapar")
     if (tarjetasDestapadas === 1){
-        console.log("entra en el if 1")
         //mostrar primer numero
         tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
@@ -31,7 +29,6 @@ function destapar(id){
         //desahibilitar primer boton
         tarjeta1.disabled = true;
     }else if (tarjetasDestapadas === 2){
-        console.log("entra en el if 2")
         //mostrar segundo numero
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
@@ -43,10 +40,7 @@ function destapar(id){
         //incrementar movimientos
         movimientos++;
         mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
-        console.log(`primerResultado ${primerResultado} - segundoResultado ${segundoResultado}`);
-        console.log(primerResultado === segundoResultado);
         if(primerResultado === segundoResultado){
-            console.log("entra en el if de que son iguales")
             //poner 0 en contador tarjetas destapadas
             tarjetasDestapadas = 0; 
         
