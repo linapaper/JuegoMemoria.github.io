@@ -37,3 +37,11 @@ button:hover{
     width: 250px;
     height: 400px;
 }
+
+.estadisticas {
+    border: 1px solid white;
+    height: 105px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
