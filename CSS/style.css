@@ -6,8 +6,8 @@ body {
 }
 
 main {
-    border: 1px solid black;
-    margin: 10px auto;
+    width: 730px;
+    margin: 100px auto;
     display: flex;
     align-items: center;
 }
@@ -16,6 +16,10 @@ main {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 0 10px 10px;
     border-radius: 8px;
+}
+
+h1{
+    text-align: center;
 }
 
 button{
@@ -36,6 +40,7 @@ button:hover{
     border-bottom-right-radius: 8px;
     width: 250px;
     height: 400px;
+    padding: 0 20px;
 }
 
 .estadisticas {
@@ -44,4 +49,12 @@ button:hover{
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
+}
+
+footer{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
 }
