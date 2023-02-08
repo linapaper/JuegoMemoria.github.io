@@ -8,4 +8,23 @@ body {
 main {
     border: 1px solid black;
     margin: 10px auto;
+    display: flex;
+}
+
+.sectionOne{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px 10px;
+    border-radius: 8px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+button:hover{
+    cursor: pointer;
 }
