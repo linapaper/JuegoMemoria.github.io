@@ -9,6 +9,7 @@ let movimientos = 0;
 //apuntando a documentos html 
 
 let mostrarMovimientos = document.getElementById('movimientos');
+let mostrarAciertos = document.getElementById('aciertos');
 
 // generacion de numeros aleatorios
 let numeros = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
@@ -38,6 +39,15 @@ function destapar(id){
         //incrementar movimientos
         movimientos++;
         mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+
+        if(primerResultado == segundoResultado){
+            //poner 0 en contador tarjetas destapadas
+            tarjetasDestapadas = 0; 
+        
+            //aumentar aciertos
+            aciertos++;
+            mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+        }
     }
 
 }
