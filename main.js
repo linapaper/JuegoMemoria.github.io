@@ -22,6 +22,14 @@ function destapar(id){
 
         //desahibilitar primer boton
         tarjeta1.disabled = true;
+    }else if (tarjetasDestapadas == 2){
+        //mostrar segundo numero
+        tarjeta2 = document.getElementById(id);
+        segundoResultado = numeros[id];
+        tarjeta2.innerHTML = primerResultado;
+
+        //desahibilitar segundo boton
+        tarjeta2.disabled = true;
     }
 
 }
