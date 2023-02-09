@@ -20,7 +20,7 @@ console.log(numeros);
 // funcion principal
 function destapar(id){
     tarjetasDestapadas++;
-    if (tarjetasDestapadas === 1){
+    if (tarjetasDestapadas == 1){
         //mostrar primer numero
         tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
@@ -28,7 +28,8 @@ function destapar(id){
 
         //desahibilitar primer boton
         tarjeta1.disabled = true;
-    }else if (tarjetasDestapadas === 2){
+
+    }else if (tarjetasDestapadas == 2){
         //mostrar segundo numero
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
@@ -40,13 +41,22 @@ function destapar(id){
         //incrementar movimientos
         movimientos++;
         mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
-        if(primerResultado === segundoResultado){
+        if(primerResultado == segundoResultado){
             //poner 0 en contador tarjetas destapadas
             tarjetasDestapadas = 0; 
         
             //aumentar aciertos
             aciertos++;
             mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+        }else{
+            //mostrar momentaneamente valores y volver a tapar
+            setTimeout(()=>{
+                tarjeta1.innerHTML = ' ';
+                tarjeta2.innerHTML = ' ';
+                tarjeta1.disabled = false;
+                tarjeta2.disabled = false;
+                tarjetasDestapadas = 0; 
+            },1500);
         }
     }
 
