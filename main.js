@@ -8,6 +8,7 @@ let movimientos = 0;
 let aciertos = 0;
 let temporizador = false;
 let timer = 30;
+let timerInicial = 30;
 let tiempoRegresivo = null;
 
 //apuntando a documentos html 
@@ -34,6 +35,14 @@ function contarTiempo(){
     }, 1000)
 }
 
+//funcion bloquear Tarjetas 
+function bloquearTarjetas(){
+    for (let i = 0; i <= 15; i++){
+        let tarjetaBloqueada = document.getElementById(i);
+        tarjetaBloqueada.innerHTML = numeros[i];
+        tarjetaBloqueada.disabled = true;
+    }
+}
 
 // funcion principal
 function destapar(id){
@@ -74,7 +83,9 @@ function destapar(id){
             mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
 
             if(aciertos === 8){
+                clearInterval(tiempoRegresivo);
                 mostrarAciertos.innerHTML = `Aciertos: ${aciertos} 😎`;
+                mostrarTiempo.innerHTML = `Te demoraste: ${timerInicial - timer} segundos 😱`;
                 mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 👌`;
             }
         }else{
@@ -85,7 +96,7 @@ function destapar(id){
                 tarjeta1.disabled = false;
                 tarjeta2.disabled = false;
                 tarjetasDestapadas = 0; 
-            },1500);
+            },500);
         }
     }
 
