@@ -7,11 +7,14 @@ let segundoResultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let temporizador = false;
+let timer = 30;
+let tiempoRegresivo = null;
 
 //apuntando a documentos html 
 
 let mostrarMovimientos = document.getElementById('movimientos');
 let mostrarAciertos = document.getElementById('aciertos');
+let mostrarTiempo = document.getElementById('tiempo restante');
 
 // generacion de numeros aleatorios
 let numeros = ['🍉','🍉','🍊','🍊','🍋','🍋','🍌','🍌','🍍','🍍','🍎','🍎','🍒','🍒','🍓','🍓']
@@ -19,8 +22,25 @@ let numeros = ['🍉','🍉','🍊','🍊','🍋','🍋','🍌','🍌','🍍','�
 numeros = numeros.sort(()=>{return Math.random()-0.5})
 console.log(numeros);
 
+//funcion contar tiempo 
+function contarTiempo(){
+    tiempoRegresivo = setInterval(()=>{
+        timer--;
+        mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`}, 1000);
+        if (timer == 0){
+            clearInterval(tiempoRegresivo);
+            bloquearTarjetas();
+        }
+}
+
 // funcion principal
 function destapar(id){
+
+    if (temporizador === false){
+        contarTiempo();
+        temporizador = true;
+    }
+
     tarjetasDestapadas++;
     if (tarjetasDestapadas == 1){
         //mostrar primer numero
