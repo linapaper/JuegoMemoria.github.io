@@ -26,12 +26,14 @@ console.log(numeros);
 function contarTiempo(){
     tiempoRegresivo = setInterval(()=>{
         timer--;
-        mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`}, 1000);
+        mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
         if (timer == 0){
             clearInterval(tiempoRegresivo);
             bloquearTarjetas();
         }
+    }, 1000)
 }
+
 
 // funcion principal
 function destapar(id){
